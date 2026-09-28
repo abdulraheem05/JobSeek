@@ -103,7 +103,7 @@ JobSeek searches and classifies vacancies across **9 career fields**:
 * Human Resources
 * Project Management
 
-<img src="public/screenshots/fields.png" alt="Fields">
+<img src="public/screenshots/fields.png" alt="Fields"  width="350">
 
 Each field is powered by **80+ carefully defined keywords**, covering different job titles, technologies, and terminology used across company career pages.
 
