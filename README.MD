@@ -1,7 +1,7 @@
 <div align="center">
 
 
-<img src="frontend/public/JobSeek Straightline.png" alt="JobSeek Logo" width="352" align="center" padding="200px">
+<img src="public/JobSeek Logo.png" alt="JobSeek Logo" width="352" align="center" padding="200px">
 
 [![Next.js](https://img.shields.io/badge/Next.js-Frontend-000000.svg)]()
 [![React](https://img.shields.io/badge/React-UI-61DAFB.svg)]()
@@ -65,7 +65,7 @@ Each source can expose jobs differently:
 
 JobSeek normalizes these different sources into a common job structure.
 
-<img src="frontend/public/screenshots/api.png" alt="JobSeek Logo" width="352" align="center" padding="200px">
+<img src="public/screenshots/normalization.png" alt="Normalization" width="352" align="center" padding="200px">
 
 ---
 
