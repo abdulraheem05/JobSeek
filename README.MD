@@ -45,11 +45,11 @@ The problem is **where it is scattered**.
 
 > **You shouldn't have to search every career page yourself.**
 
-JobSeek continuously collects vacancies from company career pages and recruitment systems during its scheduled scraping cycle, normalizes them into a common structure, filters them by relevant fields, and notify users about the new opportunity.
+JobSeek continuously collects vacancies from company career pages during its scheduled scraping cycle, normalizes them into a common structure, filters them by relevant fields, and notify users about the new opportunity.
 
 ---
 
-## ✨ What JobSeek Does
+## What JobSeek Does
 
 ### 🔎 Aggregates vacancies
 
@@ -65,7 +65,7 @@ Each source can expose jobs differently:
 
 JobSeek normalizes these different sources into a common job structure.
 
-<img src="public/screenshots/normalization.png" alt="Normalization" width="352" align="center" padding="200px">
+<img src="public/screenshots/normalization.png" alt="Normalization">
 
 ---
 
@@ -77,7 +77,7 @@ Previously discovered jobs can be recognized and skipped, while newly discovered
 
 This means users don't have to manually remember what changed on every career page.
 
-<img src="frontend/public/screenshots/api.png" alt="JobSeek Logo" width="352" align="center" padding="200px">
+<img src="public/screenshots/new_oppurtunities.png" alt="New Oppurtunities">
 
 ---
 
@@ -85,7 +85,7 @@ This means users don't have to manually remember what changed on every career pa
 
 When a relevant new opportunity is detected, JobSeek can notify users instead of requiring them to repeatedly check the platform themselves.
 
-<img src="frontend/public/screenshots/api.png" alt="JobSeek Logo" width="352" align="center" padding="200px">
+<img src="public/screenshots/notification.png" alt="Notification">
 
 ---
 
@@ -102,6 +102,8 @@ JobSeek searches and classifies vacancies across **9 career fields**:
 * Marketing
 * Human Resources
 * Project Management
+
+<img src="public/screenshots/fields.png" alt="Fields">
 
 Each field is powered by **80+ carefully defined keywords**, covering different job titles, technologies, and terminology used across company career pages.
 
@@ -137,41 +139,6 @@ flowchart LR
 
     I --> J[User Notification]
 ```
-
-
-## Company Scrapers
-
-The project currently includes integrations for companies such as:
-
-* WSO2
-* IFS
-* Virtusa
-* 99x
-* Sysco Labs
-* Rootcode
-* Dialog Axiata
-* Pearson
-* Fortude
-* CodeGen
-* Zone24x7
-* LSEG
-* Calcey Technologies
-* Creative Software
-* Tiqri
-* Mitra Innovations
-* Cambio
-* Surge Global
-* iTelaSoft
-* Sampath IT Solutions
-* PickMe
-* Daraz
-* Kapruka
-* Ascentic
-* Millennium IT
-
-Each scraper is responsible for understanding its source and converting the result into JobSeek's common job format.
-
----
 
 ## ⚙️ Automated Scraping System
 
@@ -225,7 +192,7 @@ import { waitUntil } from "@vercel/functions";
 
 ---
 
-## ⚡ Engineering Highlights
+## Engineering Highlights
 
 ### 1. Concurrent & Fault-Tolerant Scraper Execution
 
@@ -261,7 +228,7 @@ At the same time, Promise.allSettled() ensures that a failure in one company scr
 - Company D → ✅ 31 jobs
 - Company E → ✅ 12 jobs
 
-Unlike Promise.all(), which rejects when any individual promise fails, Promise.allSettled() waits for all scraper operations to complete and provides the result of each operation independently.
+
 ```
 const results = await Promise.allSettled(
   sources.map(async ([companyName, scraper]) => {
@@ -274,7 +241,9 @@ const results = await Promise.allSettled(
   })
 );
 ```
-This gives JobSeek two important properties: concurrent execution for faster scraping and failure isolation so one unreliable company source does not bring down the entire pipeline.
+This gives JobSeek two important properties:
+- Concurrent execution for faster scraping
+- Failure isolation so one unreliable company source does not bring down the entire pipeline.
 
 ### 2. Job Lifecycle & Stale Job Detection
 
@@ -289,7 +258,7 @@ Not found tomorrow  → is_active = false
 
 Instead of deleting stale jobs, JobSeek keeps the record and marks it inactive. This preserves job history while ensuring users only see **currently active opportunities**.
 
----
+
 
 ### 3. Client-Side Caching
 
@@ -317,7 +286,7 @@ JobSeek provides a centralized directory of tracked companies along with their c
 
 All relevant company information is organized in one place, making it easier to discover opportunities and apply without repeatedly searching across different company websites.
 
-<img src="frontend/public/screenshots/api.png" alt="JobSeek Logo" width="352" align="center" padding="200px">
+<img src="public/screenshots/directory.png" alt="Directory">
 
 ---
 
@@ -338,7 +307,7 @@ All relevant company information is organized in one place, making it easier to 
 
 ---
 
-## 🌱 Future Improvements
+## ⏳ Future Improvements
 
 Some areas that can be expanded as JobSeek grows:
 
@@ -352,15 +321,21 @@ Some areas that can be expanded as JobSeek grows:
 
 ---
 
+ⓘ Note
+
+This repository contains the frontend codebase of JobSeek for demonstration and portfolio purposes.
+The company scraper implementations and scraping logic are maintained in a separate private repository and are therefore not included here.
+
+---
+
 
 <div align="center">
   <h2>Contact Me</h2>
   <p>Have inquiries or feedback? Feel free to reach out!</p>
   
-  <a href="https://mail.google.com/mail/?view=cm&fs=1&to=abdlraheem26@gmail.com&su=Inquiry%20regarding%20WhatsAgent" target="_blank" rel="noopener noreferrer">
+  <a href="https://mail.google.com/mail/?view=cm&fs=1&to=abdlraheem26@gmail.com&su=Inquiry%20regarding%20JobSeek" target="_blank" rel="noopener noreferrer">
     <img src="https://img.shields.io/badge/Email-abdlraheem26%40gmail.com-005bb5?style=for-the-badge&logo=gmail&logoColor=white" alt="Email Abdul Raheem" />
   </a>
 </div>
 
 ---
-
