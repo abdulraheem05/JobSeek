@@ -85,7 +85,7 @@ This means users don't have to manually remember what changed on every career pa
 
 When a relevant new opportunity is detected, JobSeek can notify users instead of requiring them to repeatedly check the platform themselves.
 
-<img src="public/screenshots/notification.png" alt="Notification">
+<img src="public/screenshots/notification.png" alt="Notification" width="500">
 
 ---
 
@@ -103,7 +103,7 @@ JobSeek searches and classifies vacancies across **9 career fields**:
 * Human Resources
 * Project Management
 
-<img src="public/screenshots/fields.png" alt="Fields"  width="350">
+<img src="public/screenshots/fields.png" alt="Fields">
 
 Each field is powered by **80+ carefully defined keywords**, covering different job titles, technologies, and terminology used across company career pages.
 
