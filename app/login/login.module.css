@@ -1,0 +1,339 @@
+.page {
+  position: fixed;
+  inset: 0;
+
+  width: 100%;
+  height: 100dvh;
+
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #0759f5;
+}
+
+
+/* =========================================================
+   MAIN ATMOSPHERIC GLOW
+========================================================= */
+
+.glow {
+  position: absolute;
+  width: 150%;
+  height: 58%;
+  left: -25%;
+  bottom: -20%;
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(0, 225, 255, 0.95) 0%,
+      rgba(0, 194, 255, 0.75) 25%,
+      rgba(20, 123, 255, 0.45) 48%,
+      rgba(29, 86, 207, 0) 72%
+    );
+  filter: blur(22px);
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   DEEPER BLUE GLOW
+========================================================= */
+
+.glowSecondary {
+  position: absolute;
+  width: 130%;
+  height: 45%;
+  left: -15%;
+  bottom: -24%;
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(0, 89, 255, 0.95) 0%,
+      rgba(12, 92, 242, 0.72) 38%,
+      rgba(13, 78, 221, 0) 75%
+    );
+  filter: blur(30px);
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.content {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding:
+    max(74px, env(safe-area-inset-top))
+    28px
+    max(30px, env(safe-area-inset-bottom));
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   JOBSEEK LOGO
+========================================================= */
+
+.logo {
+  width: min(585px, 86vw);
+  height: auto;
+  display: block;
+  margin-top: 8vh;
+  object-fit: contain;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+
+/* =========================================================
+   TAGLINE
+========================================================= */
+
+.tagline {
+  margin: 10px 0 0;
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 14px;
+  line-height: 1;
+  font-weight: 500;
+  letter-spacing: 2.2px;
+  text-transform: lowercase;
+  text-align: center;
+  text-shadow:
+    0 2px 12px rgba(0, 52, 150, 0.22);
+}
+
+
+/* =========================================================
+   LOGIN AREA
+========================================================= */
+
+.loginSection {
+  width: 100%;
+  max-width: 390px;
+  margin-top: auto;
+  margin-bottom: 7vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   GOOGLE BUTTON
+========================================================= */
+
+.googleButton {
+  width: 90%;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  border: none;
+  border-radius: 180px;
+  background: #ffffff;
+  color: #101827;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 650;
+  cursor: pointer;
+  box-shadow:
+    0 12px 30px rgba(0, 42, 140, 0.18),
+    0 2px 8px rgba(0, 0, 0, 0.06);
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    opacity 160ms ease;
+
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+
+.googleButton:hover {
+  box-shadow:
+    0 15px 34px rgba(0, 42, 140, 0.22),
+    0 3px 10px rgba(0, 0, 0, 0.07);
+}
+
+.googleButton:active {
+  transform: scale(0.975);
+}
+
+.googleButton:disabled {
+  cursor: default;
+  opacity: 0.65;
+}
+
+
+/* =========================================================
+   GOOGLE ICON
+========================================================= */
+
+.googleIcon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.error {
+  width: 100%;
+  margin: 14px 0 0;
+  color: #fff;
+  font-size: 11px;
+  line-height: 1.5;
+  text-align: center;
+  text-shadow:
+    0 1px 6px rgba(0, 40, 120, 0.25);
+}
+
+
+/* =========================================================
+   TERMS
+========================================================= */
+
+.terms {
+  max-width: 280px;
+  margin: 17px 0 0;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 9px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.loading {
+  width: 100%;
+  height: 100dvh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0759f5;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+
+.loadingDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow:
+    0 0 20px rgba(255, 255, 255, 0.9);
+  animation: pulse 900ms ease-in-out infinite alternate;
+}
+
+
+@keyframes pulse {
+  from {
+    transform: scale(0.75);
+    opacity: 0.45;
+  }
+
+  to {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+}
+
+
+/* =========================================================
+   DESKTOP / MOBILE
+========================================================= */
+
+.desktopOnly {
+  display: none;
+}
+
+.mobileOnly {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .page {
+    height: 100vh;
+    overflow: hidden;
+    background: #ffffff;
+  }
+
+  .desktopOnly {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    overflow: hidden;
+  }
+
+  .mobileOnly {
+    display: none;
+  }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 370px) {
+  .content {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+
+  .logo {
+    width: 260px;
+    margin-top: 15vh;
+  }
+
+  .loginSection {
+    margin-bottom: 5vh;
+  }
+
+  .googleButton {
+    height: 54px;
+    border-radius: 16px;
+  }
+}
+
+
+/* =========================================================
+   TALLER PHONES
+========================================================= */
+
+@media (min-height: 800px) {
+  .logo {
+    margin-top: 19vh;
+  }
+}

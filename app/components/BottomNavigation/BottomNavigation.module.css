@@ -1,0 +1,419 @@
+/* =========================================================
+   BUTTON RESET
+========================================================= */
+
+.navItem,
+.profileNavButton {
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+
+.navItem:focus,
+.navItem:focus-visible,
+.profileNavButton:focus,
+.profileNavButton:focus-visible {
+  outline: none;
+}
+
+
+/* =========================================================
+   NAVIGATION WRAPPER
+========================================================= */
+
+.navigationWrapper {
+  position: fixed;
+
+  z-index: 100;
+
+  left: 50%;
+  bottom: calc(
+    14px + env(safe-area-inset-bottom)
+  );
+
+  transform: translateX(-50%);
+
+  width: calc(100% - 84px);
+  max-width: 390px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   MAIN DARK PILL
+========================================================= */
+
+.bottomNav {
+  /*
+   * The navigation contains 3 equal items.
+   *
+   * There are 5px of padding on each side.
+   */
+  --nav-padding: 5px;
+
+  /*
+   * Width of ONE navigation item.
+   */
+  --item-width:
+    calc(
+      (100% - (var(--nav-padding) * 2)) / 3
+    );
+
+  position: relative;
+
+  height: 62px;
+
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+
+  padding: var(--nav-padding);
+
+  border-radius: 999px;
+
+  background: #13171b;
+
+  box-shadow:
+    0 12px 30px
+    rgba(19, 23, 27, 0.18);
+
+  overflow: hidden;
+
+  pointer-events: auto;
+}
+
+
+/* =========================================================
+   MOVING ACTIVE INDICATOR
+========================================================= */
+
+/*
+   IMPORTANT:
+
+   This is NOT the white circle itself.
+
+   This is a transparent "slot" exactly as wide
+   as one navigation item.
+
+   The white circle sits in the center of this
+   slot using ::after.
+
+   Therefore:
+
+       translateX(100%)
+
+   means:
+
+       move exactly ONE navigation item.
+
+   This is much more reliable than trying to
+   calculate the circle's position directly.
+*/
+
+.activeIndicator {
+  position: absolute;
+
+  z-index: 1;
+
+  top: var(--nav-padding);
+  left: var(--nav-padding);
+
+  width: var(--item-width);
+  height: 52px;
+
+  pointer-events: none;
+
+  will-change: transform;
+
+  /*
+   * THIS is the actual sliding animation.
+   *
+   * 300ms gives the quick, fluid movement
+   * from your reference video.
+   *
+   * The cubic-bezier makes it accelerate
+   * quickly and settle naturally.
+   */
+  transition:
+    transform
+      300ms
+      cubic-bezier(
+        0.22,
+        1,
+        0.36,
+        1
+      ),
+    opacity 160ms ease;
+}
+
+
+/* =========================================================
+   THE ACTUAL WHITE CIRCLE
+========================================================= */
+
+.activeIndicator::after {
+  content: "";
+
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 43px;
+  height: 43px;
+
+  transform:
+    translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 1px 2px
+    rgba(0, 0, 0, 0.04);
+}
+
+
+/* =========================================================
+   POSITION 1 — ALERTS
+========================================================= */
+
+.indicatorHome {
+  transform: translateX(0);
+}
+
+
+/* =========================================================
+   POSITION 2 — SAVED
+========================================================= */
+
+.indicatorSaved {
+  transform: translateX(100%);
+}
+
+
+/* =========================================================
+   POSITION 3 — CAREER
+========================================================= */
+
+.indicatorCareer {
+  transform: translateX(200%);
+}
+
+
+/* =========================================================
+   PROFILE PAGE
+========================================================= */
+
+/*
+   Profile is a separate blue circular button.
+
+   Therefore the main white indicator disappears
+   while the profile page is active.
+*/
+
+.profileMainNav
+  .activeIndicator {
+  opacity: 0;
+}
+
+
+/* =========================================================
+   NAVIGATION ITEMS
+========================================================= */
+
+.navItem {
+  position: relative;
+
+  z-index: 2;
+
+  flex: 1;
+
+  height: 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: none;
+
+  border-radius: 999px;
+
+  background: transparent;
+
+  color: #747b84;
+
+  transition:
+    color 140ms ease,
+    transform 120ms ease;
+}
+
+
+/* =========================================================
+   TAP EFFECT
+========================================================= */
+
+.navItem:active {
+  transform: scale(0.93);
+}
+
+
+/* =========================================================
+   ICON CONTAINER
+========================================================= */
+
+/*
+   IMPORTANT:
+
+   There is NO white background here.
+
+   The white background belongs to the
+   independent activeIndicator.
+*/
+
+.navCircle {
+  position: relative;
+
+  z-index: 3;
+
+  width: 43px;
+  height: 43px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: transparent;
+
+  color: inherit;
+
+  transition:
+    color 120ms ease;
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.navCircle svg {
+  width: 19px;
+  height: 19px;
+
+  stroke-width: 2;
+}
+
+
+/* =========================================================
+   ACTIVE ICON
+========================================================= */
+
+.navItemActive {
+  color: #13171b;
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.navLabel {
+  display: none;
+}
+
+
+/* =========================================================
+   PROFILE BUTTON
+========================================================= */
+
+.profileNavButton {
+  width: 56px;
+  height: 56px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 0;
+
+  border-radius: 50%;
+
+  background: #0030cf;
+
+  color: #ffffff;
+
+  box-shadow:
+    0 9px 24px
+    rgba(0, 0, 0, 0.862);
+
+  pointer-events: auto;
+
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease;
+}
+
+
+/* =========================================================
+   PROFILE PRESS EFFECT
+========================================================= */
+
+.profileNavButton:active {
+  transform: scale(0.92);
+}
+
+
+/* =========================================================
+   PROFILE ACTIVE
+========================================================= */
+
+.profileNavActive {
+  background: #0030cf;
+
+  box-shadow:
+    0 7px 19px
+    rgba(0, 48, 207, 0.32);
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 370px) {
+  .navigationWrapper {
+    width: calc(100% - 24px);
+  }
+
+  .profileNavButton {
+    width: 52px;
+    height: 52px;
+  }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .activeIndicator,
+  .navItem,
+  .navCircle,
+  .profileNavButton {
+    transition: none !important;
+  }
+}

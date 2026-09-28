@@ -1,0 +1,645 @@
+.page {
+  min-height: 100dvh;
+  width: 100%;
+  background: #ffffff;
+  color: #13171b;
+}
+
+.app {
+  width: 100%;
+  max-width: 430px;
+  min-height: 100dvh;
+  margin: 0 auto;
+  padding-bottom: 112px;
+  background: #ffffff;
+}
+
+/* =========================================================
+   TOP HEADER
+========================================================= */
+
+.topHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 22px 20px 8px;
+}
+
+.preferenceText {
+  color: #0030cf;
+}
+
+.brandMark {
+  width: 31px;
+  height: 31px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background: #0030cf;
+  color: #ffffff;
+
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: -0.2px;
+}
+
+.brandText {
+  color: #13171b;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+
+/* =========================================================
+   DISCOVERY HEADER
+========================================================= */
+
+.discoveryHeader {
+  padding: 25px 20px 14px;
+}
+
+.kicker {
+  margin: 0 0 7px;
+
+  color: #0030cf;
+
+  font-size: 9px;
+  line-height: 1.2;
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.discoveryHeader h1 {
+  max-width: 330px;
+
+  margin: 0;
+
+  color: #13171b;
+
+  font-size: 20px;
+  line-height: 1.12;
+  font-weight: 750;
+  letter-spacing: -1px;
+}
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.searchSection {
+  padding: 8px 20px 0;
+}
+
+.searchBar {
+  height: 56px;
+
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  padding: 0 13px 0 17px;
+
+  border-radius: 100px;
+
+  background: #f5f7fa;
+  border: 1px solid #edf0f4;
+
+  color: #667085;
+
+  transition:
+    border-color 180ms ease,
+    background 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.searchBar:focus-within {
+  background: #ffffff;
+  border-color: rgba(0, 48, 207, 0.28);
+  box-shadow: 0 0 0 3px rgba(0, 48, 207, 0.04);
+}
+
+.searchBar input {
+  min-width: 0;
+  flex: 1;
+
+  border: 0;
+  outline: 0;
+
+  background: transparent;
+  color: #13171b;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.searchBar input::placeholder {
+  color: #8a929c;
+}
+
+.searchBar input::-webkit-search-cancel-button {
+  display: none;
+}
+
+.searchFilterButton {
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border: none;
+  border-radius: 110px;
+
+  background: #ffffff;
+  color: #13171b;
+
+  box-shadow:
+    0 1px 4px rgba(19, 23, 27, 0.07);
+
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.searchFilterButton:active {
+  transform: scale(0.93);
+}
+
+/* =========================================================
+   FILTERS
+========================================================= */
+
+.filtersSection {
+  padding: 20px 0 4px;
+}
+
+.filterHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 20px 10px;
+
+  color: #13171b;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.resultCount {
+  color: #98a2b3;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.filterRow {
+  display: flex;
+  gap: 8px;
+
+  padding: 0 20px 4px;
+
+  overflow-x: auto;
+
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.filterRow::-webkit-scrollbar {
+  display: none;
+}
+
+.filterChip {
+  height: 35px;
+
+  flex-shrink: 0;
+
+  padding: 0 15px;
+
+  border: 1px solid #e6e9ee;
+  border-radius: 999px;
+
+  background: #ffffff;
+  color: #13171b;
+
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 600;
+
+  white-space: nowrap;
+
+  transition:
+    background 180ms ease,
+    color 180ms ease,
+    border-color 180ms ease,
+    transform 160ms ease;
+}
+
+.filterChip:active {
+  transform: scale(0.95);
+}
+
+.filterChipActive {
+  background: #0030cf;
+  border-color: #0030cf;
+  color: #ffffff;
+}
+
+/* =========================================================
+   ALERT SECTION
+========================================================= */
+
+.alertSection {
+  padding: 24px 20px 20px;
+}
+
+.sectionTitleRow {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  margin-bottom: 14px;
+}
+
+.sectionTitleRow .kicker {
+  margin-bottom: 5px;
+}
+
+.sectionTitleRow h2 {
+  margin: 0;
+
+  color: #13171b;
+
+  font-size: 22px;
+  line-height: 1.1;
+  font-weight: 750;
+  letter-spacing: -0.7px;
+}
+
+.clearFilter {
+  padding: 5px 0;
+
+  background: transparent;
+  color: #0030cf;
+
+  border: none;
+
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.jobs {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* =========================================================
+   NEW JOB
+========================================================= */
+
+.newTag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: fit-content;
+
+  padding: 4px 7px;
+
+  border-radius: 6px;
+
+  background: #edf9f3;
+  color: #168653;
+
+  font-size: 9px;
+  line-height: 1;
+  font-weight: 700;
+
+  letter-spacing: 0.5px;
+}
+
+.jobCardNew {
+  border: 1px solid rgba(34, 160, 107, 0.55);
+
+  box-shadow:
+    0 4px 16px rgba(34, 160, 107, 0.06);
+}
+
+/* =========================================================
+   EMPTY STATES
+========================================================= */
+
+.emptyState {
+  min-height: 48vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 30px 20px;
+
+  text-align: center;
+}
+
+.emptyIcon {
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 16px;
+
+  border-radius: 18px;
+
+  background: #d7e1ec;
+  color: #13171b;
+}
+
+.emptyState h3 {
+  margin: 0;
+
+  color: #13171b;
+
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+
+.emptyState p {
+  max-width: 245px;
+
+  margin: 7px 0 0;
+
+  color: #667085;
+
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+/* =========================================================
+   SKELETON
+========================================================= */
+
+.skeletonCard {
+  padding: 17px;
+
+  border-radius: 22px;
+  border: 1px solid #edf0f3;
+
+  background: #ffffff;
+}
+
+.skeletonMain {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.skeletonContent {
+  flex: 1;
+}
+
+.skeletonSmall,
+.skeletonTitle,
+.skeletonCompany,
+.skeletonLogo,
+.skeletonFooter div {
+  position: relative;
+  overflow: hidden;
+
+  background: #eef1f4;
+}
+
+.skeletonSmall::after,
+.skeletonTitle::after,
+.skeletonCompany::after,
+.skeletonLogo::after,
+.skeletonFooter div::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  transform: translateX(-100%);
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.65),
+    transparent
+  );
+
+  animation: shimmer 1.3s infinite;
+}
+
+.skeletonSmall {
+  width: 55px;
+  height: 12px;
+
+  margin-bottom: 8px;
+
+  border-radius: 5px;
+}
+
+.skeletonTitle {
+  width: 80%;
+  height: 19px;
+
+  margin-bottom: 7px;
+
+  border-radius: 6px;
+}
+
+.skeletonCompany {
+  width: 35%;
+  height: 12px;
+
+  border-radius: 5px;
+}
+
+.skeletonLogo {
+  width: 53px;
+  height: 53px;
+
+  flex-shrink: 0;
+
+  border-radius: 15px;
+}
+
+.skeletonDivider {
+  height: 1px;
+
+  margin: 16px 0 12px;
+
+  background: #f0f2f4;
+}
+
+.skeletonFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.skeletonFooter div:first-child {
+  width: 115px;
+  height: 30px;
+
+  border-radius: 9px;
+}
+
+.skeletonFooter div:last-child {
+  width: 68px;
+  height: 36px;
+
+  border-radius: 12px;
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* =========================================================
+   DESKTOP
+========================================================= */
+
+.desktopMessage {
+  display: none;
+}
+
+@media (min-width: 700px) {
+  .page {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f4f6f8;
+
+    overflow: hidden;
+  }
+
+  .app {
+    display: none !important;
+  }
+
+  .desktopMessage {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 40px 24px;
+
+    box-sizing: border-box;
+  }
+
+  .desktopLogo {
+    width: 62px;
+    height: 62px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 18px;
+
+    border-radius: 19px;
+
+    background: #0030cf;
+    color: #ffffff;
+
+    font-size: 15px;
+    font-weight: 800;
+
+    box-shadow:
+      0 10px 25px rgba(0, 48, 207, 0.18);
+  }
+
+  .desktopMessage h2 {
+    margin: 0 0 7px;
+
+    color: #13171b;
+
+    font-size: 23px;
+    font-weight: 750;
+
+    letter-spacing: -0.4px;
+  }
+
+  .desktopMessage p {
+    max-width: 320px;
+
+    margin: 0;
+
+    color: #667085;
+
+    font-size: 12px;
+    line-height: 1.5;
+  }
+}
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 370px) {
+  .topHeader {
+    padding-left: 17px;
+    padding-right: 17px;
+  }
+
+  .discoveryHeader,
+  .searchSection,
+  .alertSection {
+    padding-left: 17px;
+    padding-right: 17px;
+  }
+
+  .filterRow {
+    padding-left: 17px;
+    padding-right: 17px;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .searchBar,
+  .searchFilterButton,
+  .filterChip {
+    transition: none;
+  }
+
+  .skeletonSmall::after,
+  .skeletonTitle::after,
+  .skeletonCompany::after,
+  .skeletonLogo::after,
+  .skeletonFooter div::after {
+    animation: none;
+  }
+}

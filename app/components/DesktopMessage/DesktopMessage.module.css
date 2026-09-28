@@ -1,0 +1,40 @@
+.desktopMessage {
+  display: none;
+}
+
+@media (min-width: 700px) {
+  .desktopMessage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 100dvh;
+    padding: 40px 24px;
+    text-align: center;
+  }
+
+  .logo {
+    width: 180px;
+    height: auto;
+    display: block;
+    object-fit: contain;
+  }
+
+  .desktopMessage h2 {
+    margin: 0 0 8px;
+    color: #101827;
+    font-size: 24px;
+    line-height: 1.2;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+  }
+
+  .desktopMessage p {
+    max-width: 320px;
+    margin: 0;
+    color: #667085;
+    font-size: 12px;
+    line-height: 1.6;
+  }
+}
