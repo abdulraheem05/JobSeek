@@ -13,7 +13,7 @@
 
 <br>
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Try%20JobSeek-111827?style=for-the-badge&logo=vercel&logoColor=white)](https://job-seek-henna.vercel.app/overview)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Try%20JobSeek-111827?style=for-the-badge&logo=vercel&logoColor=white)](https://jobseek.cc/overview)
 
 🔗 https://jobseek.cc/overview
 
